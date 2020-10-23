@@ -4,6 +4,7 @@
   "description": "",
   "main": "server.js",
   "dependencies": {
+    "compression": "^1.7.4",
     "express": "^4.16.4",
     "mongodb": "^3.2.3",
     "mongojs": "^2.6.0",

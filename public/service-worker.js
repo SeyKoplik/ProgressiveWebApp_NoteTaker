@@ -56,7 +56,7 @@ const FILES_TO_CACHE = [
   // API PATH NEED TO BE CHANGED IF APPLIED
   self.addEventListener("fetch", function(evt) {
     // cache successful requests to the API
-    if (evt.request.url.includes("/api/")) {
+    if (evt.request.url.includes("/all") || evt.request.url.includes("/find")) {
       evt.respondWith(
         caches.open(DATA_CACHE_NAME).then(cache => {
           return fetch(evt.request)

@@ -2,6 +2,7 @@ const express = require("express");
 const mongojs = require("mongojs");
 const logger = require("morgan");
 const path = require("path");
+const compression = require("compression");
 
 const app = express();
 
@@ -11,6 +12,8 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 app.use(express.static("public"));
+
+app.use(compression());
 
 const databaseUrl = process.env.MONGODB_URI || "notetaker";
 const collections = ["notes"];
